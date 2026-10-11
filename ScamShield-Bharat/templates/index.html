@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ScamShield Bharat helps people learn to spot suspicious messages and links.">
+  <title>ScamShield Bharat | Digital Safety</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">S</span><span>ScamShield <b>Bharat</b><small>Digital safety for everyone</small></span></a>
+    <label class="language-label" for="language">Language
+      <select id="language" aria-label="Choose language">
+        <option value="en">English</option><option value="ta">தமிழ்</option><option value="hi">हिन्दी</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">THINK BEFORE YOU CLICK</p>
+        <h1 data-i18n="heroTitle">Spot the scam.<br><span>Protect your digital life.</span></h1>
+        <p data-i18n="heroText">Check suspicious messages and URLs, learn safe online habits, and know what to do if fraud happens.</p>
+        <a class="button primary" href="#message-tool" data-i18n="startButton">Check a message</a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="shield">✓</div><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="spark spark-one">✦</span><span class="spark spark-two">✦</span></div>
+    </section>
+
+    <section class="notice"><strong data-i18n="safetyFirst">Your safety comes first</strong><span data-i18n="safetyText">Never share your OTP, PIN, password, or CVV with anyone.</span></section>
+
+    <section class="section-heading"><p class="eyebrow" data-i18n="toolsEyebrow">SAFETY TOOLS</p><h2 data-i18n="toolsTitle">Check before you trust</h2><p data-i18n="toolsText">Quick checks to help you pause and make safer decisions.</p></section>
+
+    <div class="tool-grid">
+      <section class="tool-card" id="message-tool">
+        <div class="card-icon">✉</div><h3 data-i18n="messageTitle">Suspicious message scanner</h3>
+        <p data-i18n="messageText">Paste an SMS, email, or chat message to look for common warning signs.</p>
+        <label for="message" data-i18n="messageLabel">Message text</label>
+        <textarea id="message" rows="5" placeholder="Example: Your bank account is blocked. Verify now..." data-i18n-placeholder="messagePlaceholder"></textarea>
+        <button class="button primary full" id="scan-message" data-i18n="scanMessage">Analyze message</button>
+        <div id="message-result" class="result" aria-live="polite"></div>
+      </section>
+
+      <section class="tool-card" id="url-tool">
+        <div class="card-icon">↗</div><h3 data-i18n="urlTitle">Suspicious URL checker</h3>
+        <p data-i18n="urlText">Check a link's basic structure without opening or visiting it.</p>
+        <label for="url" data-i18n="urlLabel">Website URL</label>
+        <input id="url" type="text" placeholder="example.com or https://example.com" data-i18n-placeholder="urlPlaceholder" autocomplete="off">
+        <button class="button primary full" id="scan-url" data-i18n="scanUrl">Check URL</button>
+        <div id="url-result" class="result" aria-live="polite"></div>
+      </section>
+
+      <section class="tool-card quiz-card" id="quiz">
+        <div class="card-icon">◎</div><h3 data-i18n="quizTitle">Cyber safety quiz</h3>
+        <p data-i18n="quizText">Test your instincts with a quick safety question.</p>
+        <p class="question" id="quiz-question">A caller asks for your OTP to stop a bank account from being blocked. What should you do?</p>
+        <div id="quiz-options" class="quiz-options">
+          <button class="option" data-correct="false">Share it if they know your name</button>
+          <button class="option" data-correct="true">Never share it; contact your bank officially</button>
+          <button class="option" data-correct="false">Send it by text instead</button>
+        </div>
+        <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+        <button class="button secondary full" id="next-question" data-i18n="nextQuestion">Try another question</button>
+      </section>
+
+      <section class="tool-card help-card" id="get-help">
+        <div class="card-icon">♡</div><h3 data-i18n="helpTitle">If you suspect fraud</h3>
+        <p data-i18n="helpText">Act quickly. Contact your bank or payment provider through official channels.</p>
+        <ol>
+          <li data-i18n="helpOne">Do not send more money or share codes.</li>
+          <li data-i18n="helpTwo">Save messages, transaction IDs, and screenshots.</li>
+          <li data-i18n="helpThree">In India, call 1930 promptly for financial cyber fraud.</li>
+        </ol>
+        <a class="button secondary full" href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer" data-i18n="reportButton">Official cybercrime portal ↗</a>
+      </section>
+    </div>
+
+    <section class="bottom-callout"><div><p class="eyebrow" data-i18n="rememberEyebrow">REMEMBER</p><h2 data-i18n="rememberTitle">Pause. Verify. Report.</h2><p data-i18n="rememberText">A warning result is only a guide. Even a low-risk result cannot guarantee a message or website is safe.</p></div><div class="three-steps"><span>01 <b data-i18n="pause">Pause</b></span><span>02 <b data-i18n="verify">Verify</b></span><span>03 <b data-i18n="report">Report</b></span></div></section>
+  </main>
+  <footer><span>© 2026 ScamShield Bharat · Student prototype</span><span data-i18n="footerText">Privacy-conscious: submitted text is analyzed in memory and is not stored by this starter app.</span></footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
